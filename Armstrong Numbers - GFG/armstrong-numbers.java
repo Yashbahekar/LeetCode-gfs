@@ -25,12 +25,10 @@ class Solution {
         
         int temp = n;
         int sum = 0;
-        String N = Integer.toString(n);
-        int l = N.length();
-        while(temp > 0){
-            
-            int r = temp % 10;
-            sum += Math.pow(r,l);
+        
+        while(temp >0){
+            int last = temp % 10;
+            sum += last * last * last;
             temp = temp/10;
         }
         
