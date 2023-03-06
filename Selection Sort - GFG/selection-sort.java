@@ -35,14 +35,27 @@ class Solution
 {
 	int  select(int arr[], int i)
    {   
-       int min_ind = i;
-       for(int j = i+1;j<arr.length;j++){
-           
-           if(arr[j] < arr[min_ind]){
-               min_ind = j;
+       
+       
+       int minInd = i;
+       
+       for(int j = i+1; j < arr.length; j++){
+           if(arr[j] < arr[minInd]){
+               minInd = j;
            }
        }
-       return min_ind;
+       
+       return minInd;
+       
+       
+    //   int min_ind = i;
+    //   for(int j = i+1;j<arr.length;j++){
+           
+    //       if(arr[j] < arr[min_ind]){
+    //           min_ind = j;
+    //       }
+    //   }
+    //   return min_ind;
  
  
 	}
@@ -50,15 +63,27 @@ class Solution
 	void selectionSort(int arr[], int n)
 	{
 	    
-	    for(int i = 0;i<n-1;i++){
-	        int min_ind = i;
-	        
-	        min_ind = select(arr,i);
-	        
-	        int temp = arr[i];
-	        arr[i] = arr[min_ind];
-	        arr[min_ind] = temp;
-	        
+	    for(int i = 0;i< n-1;i++){
+
+         int minInd = select(arr, i);
+         
+         int temp = arr[i];
+         arr[i] = arr[minInd];
+         arr[minInd] = temp;
+
 	    }
+	    
+	    
+	    
+	    
+	   // for(int i = 0;i<n-1;i++){
+
+	   //     int min_ind = select(arr,i);
+	        
+	   //     int temp = arr[i];
+	   //     arr[i] = arr[min_ind];
+	   //     arr[min_ind] = temp;
+	        
+	   // }
 	}
 }
